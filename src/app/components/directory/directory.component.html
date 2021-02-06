@@ -1,0 +1,81 @@
+<form [formGroup]="form" novalidate (ngSubmit)="save()" *ngIf="form">
+
+  <mat-form-field appearance="fill">
+    <mat-label>Code</mat-label>
+    <input matInput formControlName="code">
+    <mat-error *ngIf="form.get('code').hasError('required')">
+      This field is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name">
+    <mat-error *ngIf="form.get('name').hasError('required')">
+      This field is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Address</mat-label>
+    <input matInput formControlName="address">
+    <mat-error *ngIf="form.get('address').hasError('required')">
+      This field is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Town</mat-label>
+    <input matInput formControlName="town">
+    <mat-error *ngIf="form.get('town').hasError('required')">
+      This field is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Postal Code</mat-label>
+    <input matInput formControlName="postal_code">
+    <mat-error *ngIf="form.get('postal_code').hasError('required')">
+      This field is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>City</mat-label>
+    <input matInput formControlName="city">
+    <mat-error *ngIf="form.get('city').hasError('required')">
+      This field is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Phone</mat-label>
+    <input matInput formControlName="phone" type="number">
+    <mat-error *ngIf="form.get('phone').hasError('required')">
+      This field is required
+    </mat-error>
+    <mat-error *ngIf="form.get('phone').hasError('pattern')">
+      Only numbers
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email">
+    <mat-error *ngIf="form.get('email').hasError('required')">
+      This field is required
+    </mat-error>
+    <mat-error *ngIf="form.get('email').hasError('email')">
+      Email invalid
+    </mat-error>
+  </mat-form-field>
+
+  <div>
+    <button mat-button type="button" (click)="closeDialog()">
+      Cancel
+    </button>
+    <button mat-button color="primary" [disabled]="form.invalid" type="submit">
+      Save
+    </button>
+  </div>
+</form>

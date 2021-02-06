@@ -1,0 +1,12 @@
+form {
+  display: flex;
+  flex-wrap: wrap;
+  mat-form-field {
+    width: 45%;
+    margin: 5px;
+  }
+  div {
+    width: 100%;
+    text-align: center;
+  }
+}
